@@ -1,12 +1,10 @@
 AC_INIT([mfcuk], [0.3.8], [zveriu@gmail.com])
 
-AC_CONFIG_MACRO_DIR([m4])
+AM_INIT_AUTOMAKE
 
 AC_PROG_CC
 
 AC_CONFIG_HEADERS([config.h])
-
-AM_INIT_AUTOMAKE
 
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
@@ -30,7 +28,6 @@ AC_TYPE_UINT8_T
 AC_FUNC_MALLOC
 AC_FUNC_REALLOC
 
-AC_CHECK_HEADERS([sys/time.h])
 AC_CHECK_FUNCS([memset strchr strtoul])
 
 # Checks for endianness convertion
@@ -40,6 +37,9 @@ if test $ac_cv_header_endian_h = "no" -a $ac_cv_header_sys_endian_h = "no" -a $a
 fi
 
 AC_CHECK_HEADERS([byteswap.h])
+
+AC_CHECK_HEADERS([unistd.h])
+AM_CONDITIONAL([HAVE_UNISTD], [test $ac_cv_header_unistd_h = "yes"])
 
 AC_DEFINE([_XOPEN_SOURCE], [600], [Define to 500 if Single Unix conformance is wanted, 600 for sixth revision.])
 
