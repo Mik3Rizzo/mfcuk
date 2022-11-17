@@ -1696,7 +1696,6 @@ int main(int argc, char *argv[])
 
           // Print usefull/useless info (sort-of "Let me entertain you!")
           if (bfOpts['v'] && (verboseLevel > 2)) {
-            printf("\r                                                     ");
             printf("\rauths: \033[0;34m%d\033[0;m  nonces: \033[0;35m%d\033[0;m  hits: \033[0;32m%d\033[0;m", numAuthAttempts, numSpoofEntries, numHit4);
           }
 
