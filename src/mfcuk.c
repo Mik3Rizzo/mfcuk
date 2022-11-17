@@ -1694,15 +1694,8 @@ int main(int argc, char *argv[])
           // Print usefull/useless info (sort-of "Let me entertain you!")
           if (bfOpts['v'] && (verboseLevel > 2)) {
             printf("\n-----------------------------------------------------\n");
-            printf("Let me entertain you!\n");
-            printf("    uid: %08x\n", tag_recover_verify.uid);
-            printf("   type: %02x\n", tag_recover_verify.type);
-            printf("    key: %012"PRIx64"\n", crntRecovKey);
-            printf("  block: %02x\n", block);
-            printf("diff Nt: %d\n", numSpoofEntries);
-            printf("   hit4: %d\n", numHit4);
-            printf("  auths: %d\n", numAuthAttempts);
-            printf("-----------------------------------------------------\n");
+            printf("UID: %08x    TYPE: %02x\n", tag_recover_verify.uid, tag_recover_verify.type);
+            printf("auths: %d\nnonces: %d\nresponses: %d\r", numAuthAttempts, numSpoofEntries, numHit4)
           }
 
           uiErrCode = mfcuk_key_recovery_block(pnd, tag_recover_verify.uid, crntRecovKey, j, tag_recover_verify.type, block, &ui64KeyRecovered);
