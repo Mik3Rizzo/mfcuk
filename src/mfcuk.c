@@ -1695,7 +1695,7 @@ int main(int argc, char *argv[])
           if (bfOpts['v'] && (verboseLevel > 2)) {
             printf("\n-----------------------------------------------------\n");
             printf("UID: %08x    TYPE: %02x\n", tag_recover_verify.uid, tag_recover_verify.type);
-            printf("auths: %d\nnonces: %d\nresponses: %d\r", numAuthAttempts, numSpoofEntries, numHit4)
+            printf("auths: %d\nnonces: %d\nresponses: %d\r", numAuthAttempts, numSpoofEntries, numHit4);
           }
 
           uiErrCode = mfcuk_key_recovery_block(pnd, tag_recover_verify.uid, crntRecovKey, j, tag_recover_verify.type, block, &ui64KeyRecovered);
