@@ -1687,7 +1687,7 @@ int main(int argc, char *argv[])
         memset((void*)hicnt, 0, sizeof(hicnt));
         memset((void*)locnt, 0, sizeof(locnt));
 
-        printf("\n---------------------------------\n")
+        printf("\n---------------------------------\n");
         printf("UID: %08x    TYPE: %02x\n", tag_recover_verify.uid, tag_recover_verify.type);
 
         // Recovery loop for current key-type of current sector
