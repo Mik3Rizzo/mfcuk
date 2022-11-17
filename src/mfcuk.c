@@ -1696,7 +1696,7 @@ int main(int argc, char *argv[])
 
           // Print usefull/useless info (sort-of "Let me entertain you!")
           if (bfOpts['v'] && (verboseLevel > 2)) {
-            printf("auths: \033[0;34m%6d\033[0;m  nonces: \033[0;35m%6d\033[0;m  hits: \033[0;32m%6d\033[0;m\n", numAuthAttempts, numSpoofEntries, numHit4);
+            printf("auths: \033[0;34m%-6d\033[0;m  nonces: \033[0;35m%-6d\033[0;m  hits: \033[0;32m%-6d\033[0;m\n", numAuthAttempts, numSpoofEntries, numHit4);
           }
 
           uiErrCode = mfcuk_key_recovery_block(pnd, tag_recover_verify.uid, crntRecovKey, j, tag_recover_verify.type, block, &ui64KeyRecovered);
